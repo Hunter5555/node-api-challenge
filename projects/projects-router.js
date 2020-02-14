@@ -2,7 +2,7 @@ const express = require('express');
 
 const Projects = require('../data/helpers/projectModel.js');
 
-const db = require('../data/dbConfig.js');
+const db = require('../data/dbConfig.js/index.js.js');
 
 const router = express.Router();
 
