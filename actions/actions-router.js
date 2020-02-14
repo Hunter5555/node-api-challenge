@@ -73,6 +73,24 @@ router.put('/:id', async (req, res) => {
     }
 });
 
+// Finds a specific action in the database by it's id and deletes 
+// that particular action from the database.
+router.delete('/:id', async (req, res) => {
+    try {
+        const count = await Actions.remove(req.params.id);
+        if (count > 0) {
+            res.status(200).json({ message: 'The action has been deleted successfully' });
+        } else {
+            res.status(404).json({ message: 'The specified action could not be found' });
+        }
+    } catch (error) {
+        // logs error to the database
+        console.log(error);
+        res.status(500).json({ 
+            message: 'Error removing the specified action; tell me a good joke and I might change my mind'
+        });
+    }
+});
 
 
 module.exports = router;
