@@ -3,7 +3,7 @@ const helmet = require('helmet');
 
 const apiRouter = require('./api/api-router.js');
 
-const db = require('./data/dbConfig.js/index.js.js');
+const db = require('./data/dbConfig.js');
 
 const server = express();
 
